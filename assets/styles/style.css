@@ -4,5 +4,47 @@ body {
 }
 
 .row {
-    background-color: rgb(234, 154, 154);
+    background-color: rgb(100, 193, 247);
+}
+
+
+
+.img {
+
+    display: inline-block;
+}
+
+.card-deck {
+
+   
+}
+
+.col-md-2{
+
+    border-radius: 15%
+    border-width: 3px;
+    border-color: blue;
+    text-align: left;
+    padding: 0px;
+   
+    
+}
+
+
+.card.text-center {
+  
+    border-color: blueviolet;
+    border-width: 3px;
+
+}
+
+h7 {
+    text-align: left;
+}
+
+
+img {
+    max-width: 50%;
+    display: inline-block;
+    align-items: center;
 }
