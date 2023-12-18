@@ -1,10 +1,7 @@
-body {
 
-    background-color: rgb(212, 241, 250);
-}
 
 .row {
-    background-color: rgb(100, 193, 247);
+   
 }
 
 
@@ -47,4 +44,56 @@ img {
     max-width: 50%;
     display: inline-block;
     align-items: center;
+}
+
+button {
+   background-color: blue;
+
+   color: aliceblue;
+   border-radius: 5%;
+  
+   display: list-item;
+   width: 100%;
+  
+}
+
+.weather-search {
+    width: 100%;
+
+}
+
+.input-group-append {
+
+    background-color: rgb(101, 105, 228);
+    width: 100%;
+   
+    align-items: center;
+
+}
+
+.card-header {
+    background-image: url(../images/sun.png);
+    background-repeat:repeat;
+    background-size: 50%;
+
+}
+
+.weather-header {
+
+    background: radial-gradient(circle, rgb(255, 255, 255), rgb(0, 80, 210));
+}
+
+body {
+
+    color: blue;
+   
+    background-image: url(../images/cloudbk-seamless.jpg);
+    background-repeat:repeat;
+    background-size: 99.99%;
+}
+
+
+
+h1, h2, h5, h6 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
