@@ -2,9 +2,38 @@
 const apiKey = "947c7ef8f4775424300be7866e5163a0";
 //let City = "london";
 
-weatherArray = [];
+//weatherArray = [];
+
+
+
+
 
 // 5 days variable let Monday =
+
+function renderButtons() {
+
+    let citydata = [""];
+
+citydata = JSON.parse(localStorage.getItem("City")) || [];
+console.log(citydata);
+
+   $("#buttons-view").empty();
+
+    for (var i = 0; i < citydata.length; i++) {
+
+        var btncity = $("<button>");
+
+        btncity.addClass("City");
+
+        btncity.attr("data-name", citydata[i]);
+
+        btncity.text(citydata[i]);
+
+        $("#buttons-view").append(btncity);
+
+    }
+}
+
 
 
 const buttonSub = $("#search-form");
@@ -18,7 +47,7 @@ buttonSub.on('click', 'button', function (event) {
 
     event.preventDefault();
 
-    console.log("YH");
+
 
     let City = $("#search-input").val();
 
@@ -27,8 +56,22 @@ buttonSub.on('click', 'button', function (event) {
 
 
     // do we need to push all the data points into the array then stringify and add to local storage? then parse?
-    weatherArray.push(City);
-    
+  
+
+   
+
+   weatherArray = JSON.parse(localStorage.getItem("City")) || [];
+
+   weatherArray.push(City);
+
+
+    localStorage.setItem("City", JSON.stringify(weatherArray));
+
+
+    renderButtons();
+
+
+
 
     fetch(QueryURL)
         .then(function (response) {
@@ -47,10 +90,7 @@ buttonSub.on('click', 'button', function (event) {
             let CityContent2 = $('.weather-points-wind');
             let CityContent3 = $('.weather-points-humidity');
             let weatherPic = $('.weather-pic');
-            let BigCard = $("card-body-city");
 
-            BigCard.attr("<h2>");
-            BigCard.text("LALALA");
 
             // .attr("src","second.jpg")
 
@@ -62,7 +102,95 @@ buttonSub.on('click', 'button', function (event) {
             let weatherIcon = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png";
             weatherPic.attr("src", weatherIcon);
 
-            CityContent1.text("Temp: " + Math.round(CityTemp * 100)/100 + " °C");
+            CityContent1.text("Temp: " + Math.round(CityTemp * 100) / 100 + " °C");
+            CityContent2.text("Wind: " + CityWind + " KPH");
+            CityContent3.text("Humidity: " + Humidity + " %");
+
+            console.log(CityTemp);
+            console.log(CityWind);
+            console.log(Humidity);
+            console.log(WeatherDate);
+            console.log(WeatherDateTrim);
+
+            let weatherList = data.list;
+            //weatherList.concat(data.list);
+            let weatherList2 = Array.from(weatherList);
+            console.log(weatherList2);
+
+
+
+            let cityTitle = $('.city-name');
+            cityTitle.text(data.city.name + " (" + Today + ")");
+
+            // let cardTitles = $('car')
+
+
+
+            for (let i = 0; i < weatherList2.length; i++) {
+
+
+
+
+
+
+                    $('.card-title-' + [i]).text(dayjs(weatherList2[i*7].dt_txt).format("DD/MM/YY"));
+                    $('.temp-' + [i]).text("Temp: " + Math.round((weatherList2[i*7].main.temp - 273.15) * 100) / 100 + "°C");
+                    $('.wind-' + [i]).text("Wind: " + weatherList2[i*7].wind.speed + " KPH");
+                    $('.humidity-' + [i]).text("Humidity: " + weatherList2[i*7].main.humidity + "%");
+                    $('.weather-pic-' + [i]).attr("src", "https://openweathermap.org/img/w/" + weatherList2[i*7].weather[0].icon + ".png");
+
+                }
+
+            }
+        )
+
+
+
+
+});
+
+renderButtons();
+
+const btnContainer = $('#buttons-view');
+
+btnContainer.on('click', 'button', function () {
+
+    let CityChoice = $(this).text();
+    console.log(CityChoice);
+    const QueryURL2 = "https://api.openweathermap.org/data/2.5/forecast?q=" + CityChoice + "&appid=" + apiKey
+
+
+
+    fetch(QueryURL2)
+        .then(function (response) {
+
+            return response.json();
+        })
+        .then(function (data) {
+
+
+            console.log(JSON.stringify(data, null, 2));
+            console.log(data);
+            
+            let Today = dayjs().format("DD/MM/YYYY");
+
+            let CityContent1 = $('.weather-points-temp');
+            let CityContent2 = $('.weather-points-wind');
+            let CityContent3 = $('.weather-points-humidity');
+            let weatherPic = $('.weather-pic');
+
+
+            // .attr("src","second.jpg")
+
+            let CityTemp = data.list[0].main.temp - 273.15;
+            let CityWind = data.list[0].wind.speed;
+            let Humidity = data.list[0].main.humidity;
+            let WeatherDate = data.list[0].dt_txt;
+            let WeatherDateTrim = dayjs(WeatherDate).format("DD/MM/YYYY");
+            let weatherIcon = "https://openweathermap.org/img/w/" + data.list[0].weather[0].icon + ".png";
+            weatherPic.attr("src", weatherIcon);
+
+            CityContent1.text("Temp: " + Math.round(CityTemp * 100) / 100 + " °C");
             CityContent2.text("Wind: " + CityWind + " KPH");
             CityContent3.text("Humidity: " + Humidity + " %");
 
@@ -90,7 +218,7 @@ buttonSub.on('click', 'button', function (event) {
                 $('.temp-' + [i]).text("Temp: " + Math.round((weatherList2[i * 7].main.temp - 273.15) * 100) / 100 + "°C");
                 $('.wind-' + [i]).text("Wind: " + weatherList2[i * 7].wind.speed + " KPH");
                 $('.humidity-' + [i]).text("Humidity: " + weatherList2[i * 7].main.humidity + "%");
-                $('.weather-pic-' + [i]).attr("src", "https://openweathermap.org/img/w/" + weatherList2[i*7].weather[0].icon + ".png")
+                $('.weather-pic-' + [i]).attr("src", "https://openweathermap.org/img/w/" + weatherList2[i * 7].weather[0].icon + ".png")
 
 
             }
@@ -101,12 +229,17 @@ buttonSub.on('click', 'button', function (event) {
 
 
 
-        });
+
+
+        })
 
 
 
 
 });
+
+
+JSON.parse(localStorage.getItem("City")) || [];
 
 
 
