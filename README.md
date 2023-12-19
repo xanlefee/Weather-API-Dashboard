@@ -14,7 +14,7 @@ https://xanlefee.github.io/Weather-API-Dashboard/
 
 
 
-<img src="starter/assets/images/WEB-API-QUIZ-GIF.gif" width="800" />
+<img src="assets/images/weather-gif.gif" width="800" />
 
 
 
