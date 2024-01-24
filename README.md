@@ -5,7 +5,7 @@ In this project, I created a dashboard that displays the weather report over a 5
 
 Firstly, I created a function to get the user input and return and display  fetch api data in both the large card and the 5 smaller cards, one for each day of the week. Secondly, saved the inputs in local storage. Then, I created a function to render buttons from the local storage history which are retrieved on page load.
 
-Some challenges included finding a way to increment the array elements in the data object over 5 days as the data is updated every 3 hours. I got around this my multiplying the incrementor. 
+
 
 
 
@@ -14,7 +14,7 @@ https://xanlefee.github.io/Weather-API-Dashboard/
 
 
 
-<img src="assets/images/weather-gif.gif" width="800" />
+<img src="assets/images/weather-gif-1.gif" width="600" />
 
 
 
