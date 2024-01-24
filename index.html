@@ -7,11 +7,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/styles/style.css" />
-  <title>Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+
+<title>Weather Dashboard</title>
 </head>
 
 <body>
   <header class="container-fluid text-center  p-2 weather-header">
+    <img src="/assets/images/weather-globe-02.png" width="200px">
     <h1>Weather Dashboard</h1>
   </header>
 
@@ -27,7 +35,7 @@
             <div class="input-group">
               <input class="form-input weather-search" type="text" id="search-input" placeholder="London"
                 aria-labelledby="form-heading" aria-controls="today forecast" />
-              <div class="input-group-append">
+                <div class="input-group-append">
                 <button type="submit" class="btn search-button" id="search-button" aria-label="submit search">
                   Search
                 </button>
@@ -37,6 +45,7 @@
             </div>
           </div>
         </form>
+        <button id="clear-search">Clear History</button>
         <div class="list-group" id="history">
           <div id="buttons-view"></div>
         </div>
@@ -57,8 +66,7 @@
               <h7 class="weather-points-wind"></h7>
               <br>
               <h7 class="weather-points-humidity"></h7>
-           
-             
+          
               
             </div>
           </div>
@@ -72,7 +80,7 @@
         <div class="card-deck">
          
          
-          <div class="card text-white bg-dark col-md-2 weather1">
+          <div class="card col-md-2 weather1">
           
             <div class="card-body">
               <h5 class="card-title-1"></h5>
@@ -85,12 +93,10 @@
               <br>
               <h7 class="humidity-1"></h7>
 
-
-
             </div>
             
           </div>
-          <div class="card text-white bg-dark col-md-2 weather2">
+          <div class="card col-md-2 weather2">
             
             <div class="card-body">
               <h5 class="card-title-2"></h5>
@@ -104,12 +110,10 @@
               <h7 class="humidity-2"></h7>
            
 
-
-
             </div>
             
           </div>
-          <div class="card text-white bg-dark col-md-2 weather3">
+          <div class="card col-md-2 weather3">
             
             <div class="card-body">
               <h5 class="card-title-3"></h5>
@@ -127,7 +131,7 @@
             </div>
             
           </div>
-          <div class="card text-white bg-dark col-md-2 weather4">
+          <div class="card col-md-2 weather4">
       
             <div class="card-body">
               <h5 class="card-title-4"></h5>
@@ -142,11 +146,10 @@
               <h7 class="humidity-4"></h7>
 
 
-
             </div>
           
           </div>
-          <div class="card text-white bg-dark col-md-2 weather5">
+          <div class="card col-md-2 weather5">
             
             <div class="card-body">
               <h5 class="card-title-5"></h5>
@@ -159,21 +162,12 @@
               <br>
               <h7 class="humidity-5"></h7>
 
-
-
             </div>
            
           </div>
         </div>
 
-         
-
-
-
-
-
-
-
+  
 
       </div> 
     </div>
@@ -185,5 +179,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="assets/JS/script.js"></script>
 </body>
+
+<footer>
+  <img src="/assets/images/little-pig-blue-02.png" width="10%">
+  <h6>Xanthe Horner 2024
+  </h6>
+</footer>
 
 </html>

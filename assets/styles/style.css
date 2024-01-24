@@ -1,6 +1,10 @@
 
 
 .row {
+
+    width: 100%;
+    
+    display:flexbox;
    
 }
 
@@ -11,18 +15,21 @@
     display: inline-block;
 }
 
-.card-deck {
 
-   
-}
 
 .col-md-2{
 
-    border-radius: 15%
-    border-width: 3px;
-    border-color: blue;
+   
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius:  5px 
+    border: none;
     text-align: left;
-    padding: 0px;
+    border-color: transparent;
+    background-color: rgb(136, 124, 239);
+
+
    
     
 }
@@ -30,8 +37,9 @@
 
 .card.text-center {
   
-    border-color: rgb(36, 39, 216);
-    border-width: 3px;
+    border-width: 2px;
+
+   
 
 }
 
@@ -47,54 +55,118 @@ img {
 }
 
 button {
-   background-color: blue;
+   background-color: rgb(108, 108, 237);
 
-   color: aliceblue;
-   border-radius: 5%;
+   color: rgb(255, 255, 255);
+   border-radius: 5px;
+   border: none;
+   margin: 1px;
   
-   display: list-item;
-   width: 100%;
+  
   
 }
 
 .weather-search {
     width: 100%;
+    color: rgb(5, 34, 150);
+
     
 
 }
 
+.aside {
+    width: 100%;
+    display: flex;
+}
+
+.search-button {
+    color: rgb(255, 255, 255);
+   
+}
+
+.form-input{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: aqua;
+}
+
 .input-group-append {
 
-    background-color: rgb(101, 105, 228);
+    background-color: rgb(73, 92, 215);
     width: 100%;
-   
-    align-items: center;
+    border-radius: 5px;
+    
+
 
 }
 
-.card-header {
-    background-image: url(../images/Cloud\ texture\ small.png);
-    background-repeat: repeat;
-    background-size: 100%;
+#clear-search {
+    background-color: rgb(217, 145, 227);
+}
 
+form {
+  
+   width: max-content;
+}
+
+
+
+
+.card, h2, h3, h4, h5, h6 {
+    color:  rgb(8, 8, 162);
+}
+
+.card.text-center {
+
+   
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-right-radius:  4px 
+    border-width: 2px;
+    background-image: url(../images/rainydayz.jpg);
+    background-repeat: repeat;
+    background-size: 60%;
+    border-color:   rgb(8, 8, 162);
+
+  
 }
 
 .weather-header {
+    background-color: rgb(136, 124, 239);
 
-    background: radial-gradient(circle, rgb(255, 255, 255), rgb(0, 80, 210));
+   /* background: radial-gradient(circle, rgb(255, 255, 255), rgb(0, 80, 210)); */
 }
 
 body {
 
-    color: blue;
+    
    
     background-image: url(../images/cloudbk-seamless.jpg);
     background-repeat:repeat;
     background-size: 99.99%;
 }
 
+h1 {
+    font-family: 'Rubik Bubbles', system-ui;
+    color:white;
+    font-size: 500%;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color:  rgb(8, 8, 162);
+}
 
 
-h1, h2, h5, h6 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+h2, h3, h4, h5, h6, h7 {
+    font-family: 'Fredoka', sans-serif;
+}
+
+footer {
+    text-align: center;
+}
+
+button:active {
+    border-color:#002ead;
+   
 }
